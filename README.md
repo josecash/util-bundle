@@ -66,7 +66,7 @@ class ExampleController extends UtilController {
         $name = "What Ever's name";
         $whatEver = new Object();
         $whatEver->setName($name);
-        // StrUtil Resulting slug would be "what-evers-name"
+        // StrUtil Resulting slug would be "what-ever-s-name"
         $whatEver->setSlug(StrUtil::slug($name));
         
         // Resize any Image to a Fixed Size
