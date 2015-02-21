@@ -62,12 +62,9 @@ use OfCoding\UtilBundle\Entity\ImgUtil;
 class ExampleController extends UtilController {
     ...
     public function saveWhatEver() {
-        // Let's add a slug to that object...
+        // Let's create a slug...
         $name = "What Ever's name";
-        $whatEver = new Object();
-        $whatEver->setName($name);
-        // StrUtil Resulting slug would be "what-ever-s-name"
-        $whatEver->setSlug(StrUtil::slug($name));
+        $slug = StrUtil::slug($name) // StrUtil resulting slug would be "what-ever-s-name"
         
         // Resize any Image to a Fixed Size
         ImgUtil::resizeFixedSize($src_file, $dst_file, $dst_width, $dst_height);
