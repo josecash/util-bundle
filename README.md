@@ -8,7 +8,7 @@ that has some alias methods to simplify things.
 ```
     "repositories": [{
         "type": "vcs",
-        "url": "https://github.com/josecash/util-bundle.git"
+        "url": "https://github.com/OfCoding/util-bundle.git"
     }],
 ```
 - Add next line to "require" section in composer.json:
