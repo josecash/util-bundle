@@ -1,5 +1,5 @@
 {
-    "name": "ofcoding/utilbundle",
+    "name": "ofcoding/util-bundle",
     "description": "A symfony2 bundle with util classes to use with other bundles.",
     "type": "symfony-bundle",
     "authors": [{
@@ -7,12 +7,14 @@
             "email": "josecash@ofcoding.com"
         }],
     "keywords": [
-        "util bundle"
+        "util",
+        "bundle"
     ],
     "license": [
         "MIT"
     ],
     "require": {
+        "php": ">=5.3.3"
     },
     "autoload": {
         "psr-0": {
@@ -20,8 +22,6 @@
         }
     },
     "target-dir": "OfCoding/UtilBundle",
-    "repositories": [{
-        }],
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.0-dev"
