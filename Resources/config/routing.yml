@@ -1,3 +1,0 @@
-ofc_util_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: OFCUtilBundle:Default:index }
