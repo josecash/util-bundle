@@ -15,7 +15,10 @@ that has some alias methods to simplify things.
 ```
     "ofcoding/util-bundle": "dev-master"
 ```
-
+- Install the bundle via composer:
+```
+$ composer update
+```
 - Add next line to bundles array in app/AppKernel.php:
 ``` php
      new OfCoding\UtilBundle\OFCUtilBundle()
