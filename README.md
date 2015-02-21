@@ -5,8 +5,10 @@ that has some alias methods to simplify things.
 # Installation
 
 - Add next line to "require" section in composer.json:
-```
-    "ofcoding/util-bundle": "dev-master"
+``` "require": {
+       ...
+        "ofcoding/util-bundle": "dev-master"
+    },
 ```
 - Install the bundle via composer:
 ```
