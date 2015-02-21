@@ -44,8 +44,15 @@ Now you can send an email, add a flash message and use doctrine from your contro
 ``` php
 public function exampleAction(Request $req) {
     // Send an email.
+    $subject = "Sample mail";
+    $from = "contact@ofcoding.com";
+    $to = "example@gmail.com";
+    $view = $this->renderView('OFCExampleBundle:Mail:info-mail.html.twig', 
+                    array('content' => '<h1>Sample Mail</h1><p>This is a sample</p>'));
     $this->mailing($subject, $from, $to, $view);
     // Add flash message
+    $type = "error";
+    $msg = "There was an error...";
     $this->flashMsg($type, $msg);
     // Use doctrine repository
     $this->doctrineRepo('OFCExampleBundle:Example')->loadExample();
