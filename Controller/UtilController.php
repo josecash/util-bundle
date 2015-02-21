@@ -3,7 +3,6 @@
 namespace OfCoding\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 class UtilController extends Controller {
 
     protected function doctrine() {
