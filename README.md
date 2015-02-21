@@ -64,7 +64,7 @@ class ExampleController extends UtilController {
     public function saveWhatEver() {
         // Let's create a slug...
         $name = "What Ever's name";
-        $slug = StrUtil::slug($name) // StrUtil resulting slug would be "what-ever-s-name"
+        $slug = StrUtil::slug($name) // Resulting slug would be "what-ever-s-name"
         
         // Resize any Image to a Fixed Size
         ImgUtil::resizeFixedSize($src_file, $dst_file, $dst_width, $dst_height);
