@@ -18,7 +18,7 @@ $ composer update
 - Add next line to bundles array in app/AppKernel.php:
 ``` php
 ...
- public function registerBundles() {
+public function registerBundles() {
         $bundles = array(
             ...
             new OfCoding\UtilBundle\OFCUtilBundle(),
