@@ -54,17 +54,23 @@ public function exampleAction(Request $req) {
 
 - Util Entities: There are several util classes for strings, time, images and browser.
 ``` php
-// Import StrUtil to create a slug.
+// Import StrUtil
 use OfCoding\UtilBundle\Entity\StrUtil;
+// Import ImgUtil
+use OfCoding\UtilBundle\Entity\ImgUtil;
 
 class ExampleController extends UtilController {
     ...
     public function saveWhatEver() {
+        // Let's add a slug to that object...
         $name = "What Ever's name";
         $whatEver = new Object();
         $whatEver->setName($name);
         // StrUtil Resulting slug would be "what-evers-name"
         $whatEver->setSlug(StrUtil::slug($name));
+        
+        // Resize any Image to a Fixed Size
+        ImgUtil::resizeFixedSize($src_file, $dst_file, $dst_width, $dst_height);
     }
     ...
 }
