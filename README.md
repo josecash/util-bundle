@@ -3,7 +3,7 @@ A symfony2 bundle with util classes to use with other bundles.
 
 # Installation
 
-- Include this in your composer.json
+- Include this in your composer.json<br/>
     "repositories": [{
         "type": "vcs",
         "url": "https://github.com/josecash/util-bundle.git"
