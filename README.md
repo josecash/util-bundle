@@ -4,13 +4,6 @@ that has some alias methods to simplify things.
 
 # Installation
 
-- Include this in your composer.json
-```
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/OfCoding/util-bundle.git"
-    }],
-```
 - Add next line to "require" section in composer.json:
 ```
     "ofcoding/util-bundle": "dev-master"

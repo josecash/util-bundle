@@ -16,6 +16,10 @@
     "require": {
         "php": ">=5.3.3"
     },
+    "repositories": [{
+            "type": "vcs",
+            "url": "https://github.com/OfCoding/util-bundle.git"
+        }],
     "autoload": {
         "psr-0": {
             "OfCoding\\UtilBundle": ""
