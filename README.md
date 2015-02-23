@@ -84,5 +84,5 @@ class ExampleController extends UtilController {
 }
 ```
 
-More info at [OfCoding]<http://www.ofcoding.com>
+More info at <a href='http://www.ofcoding.com' target='_blank'>OfCoding</a>
 
