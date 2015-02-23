@@ -84,5 +84,5 @@ class ExampleController extends UtilController {
 }
 ```
 
-More info at <http://www.ofcoding.com>
+More info at [OfCoding]<http://www.ofcoding.com>
 
