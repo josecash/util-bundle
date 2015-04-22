@@ -3,7 +3,14 @@
 namespace OfCoding\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use OfCoding\UtilBundle\Entity\BrowserUtil;
+
 class UtilController extends Controller {
+    protected $browser;
+    
+    public function __construct() {
+        $this->browser = new BrowserUtil();
+    }
 
     protected function doctrine() {
         return $this->getDoctrine()->getManager();
