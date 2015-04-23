@@ -7,7 +7,6 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use OfCoding\UtilBundle\Controller\LangController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class LocaleListener implements EventSubscriberInterface {
@@ -34,31 +33,13 @@ class LocaleListener implements EventSubscriberInterface {
         }
     }
 
-    public function checkLang(Request $request) {
-        $cookieLang = $request->cookies->get('lang');
-        $locale = $request->getLocale();
-
-        if (!empty($cookieLang) && $cookieLang != $locale) {
-            $route = $request->get('_route');
-            return $this->router->generate($route . "." . $cookieLang);
-        } else if (empty($cookieLang)) {
-            $resp = new Response();
-            $resp->headers->setCookie(new Cookie('lang', $locale, 0, '/', null, false, false));
-            $resp->send();
-        }
-
-        return null;
-    }
-
     public function onKernelRequest(GetResponseEvent $event) {
         $request = $event->getRequest();
-
         if (!$request->hasPreviousSession()) {
             return;
         }
 
         $locale = $request->attributes->get('_locale');
-
         if ($locale) {
             $request->getSession()->set('_locale', $locale);
         } else {
@@ -67,8 +48,7 @@ class LocaleListener implements EventSubscriberInterface {
 
         $url = $request->attributes->get('real_url');
         if (!is_null($url)) {
-            $response = new RedirectResponse($url);
-            $event->setResponse($response);
+            $event->setResponse(new RedirectResponse($url));
         }
     }
 
