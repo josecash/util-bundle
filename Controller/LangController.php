@@ -6,6 +6,8 @@ use OfCoding\UtilBundle\Controller\UtilController;
 use OfCoding\UtilBundle\Model\LangInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Response;
 
 class LangController extends UtilController implements LangInterface {
 
@@ -22,9 +24,9 @@ class LangController extends UtilController implements LangInterface {
                 $url = null;
             }
         } else if (empty($cookieLang)) {
-            $resp = new Response();
-            $resp->headers->setCookie(new Cookie('lang', $locale, 0, '/', null, false, false));
-            $resp->send();
+            $response = new Response();
+            $response->headers->setCookie(new Cookie('lang', $locale, 0, '/', null, false, false));
+            $response->send();
         }
 
         return $url;
