@@ -35,6 +35,11 @@ class LocaleListener implements EventSubscriberInterface {
 
     public function onKernelRequest(GetResponseEvent $event) {
         $request = $event->getRequest();
+        $url = $request->attributes->get('real_url');
+        if (!is_null($url)) {
+            $event->setResponse(new RedirectResponse($url));
+        }
+        
         if (!$request->hasPreviousSession()) {
             return;
         }
@@ -44,11 +49,6 @@ class LocaleListener implements EventSubscriberInterface {
             $request->getSession()->set('_locale', $locale);
         } else {
             $request->setLocale($request->getSession()->get('_locale', $this->defaultLocale));
-        }
-
-        $url = $request->attributes->get('real_url');
-        if (!is_null($url)) {
-            $event->setResponse(new RedirectResponse($url));
         }
     }
 
