@@ -25,7 +25,7 @@ class UtilController extends Controller {
                 ->setTo($to)
                 ->setBody($view, 'text/html');
 
-        $this->get('mailer')->send($message);
+        return $this->get('mailer')->send($message);
     }
 
 }
