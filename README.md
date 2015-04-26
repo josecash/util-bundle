@@ -1,5 +1,5 @@
 # util-bundle
-A symfony2 bundle witch provide util classes to use with other bundles and a UtilController
+A symfony2 bundle witch provide util classes and language control to use with other bundles and a UtilController
 that has some alias methods to simplify things.
 
 # Installation
