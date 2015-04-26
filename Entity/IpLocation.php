@@ -32,7 +32,7 @@ final class IpLocation {
     }
 
     public function getCountry() {
-        if (!empty($this->country))
+        if (empty($this->country))
             $this->country = $this->getResult(self::PRECISION_COUNTRY);
 
         return $this->country;
