@@ -5,7 +5,9 @@ namespace OfCoding\UtilBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class UtilController extends Controller {
-  
+
+    const DEFAULT_MAIL = 'mailer_user';
+
     protected function doctrine() {
         return $this->getDoctrine()->getManager();
     }
@@ -26,6 +28,10 @@ class UtilController extends Controller {
                 ->setBody($view, 'text/html');
 
         return $this->get('mailer')->send($message);
+    }
+
+    protected function parameter($name) {
+        return $this->container->getParameter($name);
     }
 
 }
