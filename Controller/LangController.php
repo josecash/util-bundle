@@ -41,11 +41,14 @@ class LangController extends UtilController implements LangInterface {
     private function chooseLang(&$locale, $ip) {
         $allowedLangs = array('es', 'en', 'fr', 'de');
         $ipLang = $locale;
-        $ipLoc = new IpLocation($ip, IpLocation::PRECISION_COUNTRY);
-        $ipCountry = $ipLoc->getCountry();
-        if (!empty($ipCountry) && isset($ipCountry['countryCode']))
-            $ipLang = strtolower($ipCountry['countryCode']);
 
+        if (!empty($ip)) {
+            $ipLoc = new IpLocation($ip, IpLocation::PRECISION_COUNTRY);
+            $ipCountry = $ipLoc->getCountry();
+            if (!empty($ipCountry) && isset($ipCountry['countryCode']))
+                $ipLang = strtolower($ipCountry['countryCode']);
+        }
+        
         $browser = new BrowserUtil();
         $browserLang = $browser->getLang();
         if ($browserLang == $ipLang && in_array($ipLang, $allowedLangs))
