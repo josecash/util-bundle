@@ -1,6 +1,6 @@
 {
     "name": "ofcoding/util-bundle",
-    "description": "A symfony2 bundle with util classes to use with other bundles.",
+    "description": "A symfony2 bundle with util classes to use with other bundles and language control.",
     "type": "symfony-bundle",
     "authors": [{
             "name": "josecash",
