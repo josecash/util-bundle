@@ -29,17 +29,16 @@ class LocaleListener implements EventSubscriberInterface {
         $control = $controller[0];
         if ($control instanceof LangController) {
             $url = $control->checkLang($event->getRequest());
-            $event->getRequest()->attributes->set('real_url', $url);
+            if (!is_null($url)) {
+                $event->setController(function() use ($url) {
+                    return new RedirectResponse($url);
+                });
+            }
         }
     }
 
     public function onKernelRequest(GetResponseEvent $event) {
         $request = $event->getRequest();
-        $url = $request->attributes->get('real_url');
-        if (!is_null($url)) {
-            $event->setResponse(new RedirectResponse($url));
-        }
-        
         if (!$request->hasPreviousSession()) {
             return;
         }
