@@ -29,7 +29,7 @@ class LangController extends UtilController implements LangInterface {
                 $url = null;
             }
         } else if (empty($cookieLang)) {
-            $this->chooseLang($locale);
+            $this->chooseLang($locale, $request->getClientIp());
             $response = new Response();
             $response->headers->setCookie(new Cookie('lang', $locale, 0, '/', null, false, false));
             $response->send();
@@ -38,10 +38,9 @@ class LangController extends UtilController implements LangInterface {
         return $url;
     }
 
-    private function chooseLang(&$locale) {
+    private function chooseLang(&$locale, $ip) {
         $allowedLangs = array('es', 'en', 'fr', 'de');
         $ipLang = $locale;
-        $ip = $request->getClientIp();
         $ipLoc = new IpLocation($ip, IpLocation::PRECISION_COUNTRY);
         $ipCountry = $ipLoc->getCountry();
         if (!empty($ipCountry))
