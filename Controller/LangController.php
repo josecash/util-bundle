@@ -43,11 +43,9 @@ class LangController extends UtilController implements LangInterface {
         $ipLang = $locale;
         $ip = $request->getClientIp();
         $ipLoc = new IpLocation($ip, IpLocation::PRECISION_COUNTRY);
-        if (!empty($ipLoc)) {
-            $ipCountry = $ipLoc->getCountry();
-            if (!empty($ipCountry))
-                $ipLang = strtolower($ipCountry['contryCode']);
-        }
+        $ipCountry = $ipLoc->getCountry();
+        if (!empty($ipCountry))
+            $ipLang = strtolower($ipCountry['contryCode']);
 
         $browser = new BrowserUtil();
         $browserLang = $browser->getLang();
