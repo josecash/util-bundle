@@ -34,4 +34,8 @@ class UtilController extends Controller {
         return $this->container->getParameter($name);
     }
 
+    protected function userGranted($role) {
+        return $this->get('security.context')->isGranted($role);
+    }
+
 }
