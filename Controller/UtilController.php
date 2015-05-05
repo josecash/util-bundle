@@ -1,6 +1,6 @@
 <?php
 
-namespace Kimerikal\UtilBundle\Controller;
+namespace OfCoding\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

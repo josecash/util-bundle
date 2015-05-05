@@ -1,6 +1,6 @@
 <?php
 
-namespace Kimerikal\UtilBundle\Model;
+namespace OfCoding\UtilBundle\Model;
 
 use Symfony\Component\HttpFoundation\Request;
 

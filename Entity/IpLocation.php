@@ -1,6 +1,6 @@
 <?php
 
-namespace Kimerikal\UtilBundle\Entity;
+namespace OfCoding\UtilBundle\Entity;
 
 final class IpLocation {
 

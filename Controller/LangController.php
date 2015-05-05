@@ -1,15 +1,15 @@
 <?php
 
-namespace Kimerikal\UtilBundle\Controller;
+namespace OfCoding\UtilBundle\Controller;
 
-use Kimerikal\UtilBundle\Controller\UtilController;
-use Kimerikal\UtilBundle\Model\LangInterface;
+use OfCoding\UtilBundle\Controller\UtilController;
+use OfCoding\UtilBundle\Model\LangInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response;
-use Kimerikal\UtilBundle\Entity\IpLocation;
-use Kimerikal\UtilBundle\Entity\BrowserUtil;
+use OfCoding\UtilBundle\Entity\IpLocation;
+use OfCoding\UtilBundle\Entity\BrowserUtil;
 
 /**
  * TODO: Hacer array de idiomas permitidos en parametros generales.

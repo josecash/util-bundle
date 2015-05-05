@@ -1,6 +1,6 @@
 <?php
 
-namespace Kimerikal\UtilBundle\DoctrineExtensions\Query\Mysql;
+namespace OfCoding\UtilBundle\DoctrineExtensions\Query\Mysql;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;

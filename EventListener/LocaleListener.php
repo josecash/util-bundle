@@ -1,12 +1,12 @@
 <?php
 
-namespace Kimerikal\UtilBundle\EventListener;
+namespace OfCoding\UtilBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
-use Kimerikal\UtilBundle\Controller\LangController;
+use OfCoding\UtilBundle\Controller\LangController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class LocaleListener implements EventSubscriberInterface {
