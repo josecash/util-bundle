@@ -1,10 +1,10 @@
 {
-    "name": "ofcoding/util-bundle",
+    "name": "kimerikal/util-bundle",
     "description": "A symfony2 bundle with util classes to use with other bundles and language control.",
     "type": "symfony-bundle",
     "authors": [{
             "name": "josecash",
-            "email": "joseca@ofcoding.com"
+            "email": "joseca@kimerikal.com"
         }],
     "keywords": [
         "util",
@@ -18,14 +18,14 @@
     },
     "repositories": [{
             "type": "vcs",
-            "url": "https://github.com/OfCoding/util-bundle.git"
+            "url": "https://github.com/Kimerikal/util-bundle.git"
         }],
     "autoload": {
         "psr-0": {
-            "OfCoding\\UtilBundle": ""
+            "Kimerikal\\UtilBundle": ""
         }
     },
-    "target-dir": "OfCoding/UtilBundle",
+    "target-dir": "Kimerikal/UtilBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.0-dev"
