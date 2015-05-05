@@ -1,6 +1,6 @@
 services:
     app.locale_listener:
-        class: OfCoding\UtilBundle\EventListener\LocaleListener
+        class: Kimerikal\UtilBundle\EventListener\LocaleListener
         arguments: [@router, "%kernel.default_locale%"]
         tags:
             - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

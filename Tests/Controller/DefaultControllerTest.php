@@ -1,6 +1,6 @@
 <?php
 
-namespace OfCoding\UtilBundle\Tests\Controller;
+namespace Kimerikal\UtilBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

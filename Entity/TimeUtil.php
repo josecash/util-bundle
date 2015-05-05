@@ -1,5 +1,5 @@
 <?php
-namespace OfCoding\UtilBundle\Entity;
+namespace Kimerikal\UtilBundle\Entity;
 
 class TimeUtil {
 
