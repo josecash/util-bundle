@@ -8,7 +8,7 @@ that has some alias methods to simplify things.
 ``` 
     "require": {
        ...
-        "ofcoding/util-bundle": "dev-master"
+        "kimerikal/util-bundle": "dev-master"
     },
 ```
 - Install the bundle via composer:
@@ -21,7 +21,7 @@ $ composer update
 public function registerBundles() {
         $bundles = array(
             ...
-            new OfCoding\UtilBundle\OFCUtilBundle(),
+            new Kimerikal\UtilBundle\KKUtilBundle(),
         );
 }
 ...
@@ -34,10 +34,10 @@ You're done!
 - UtilController: To use it just extend from this controller in any controller you want.
     Example
 ``` php
-namespace OfCoding\ExampleBundle\Controller;
+namespace Kimerikal\ExampleBundle\Controller;
 
 // Import UtilController
-use OfCoding\UtilBundle\Controller\UtilController;
+use Kimerikal\UtilBundle\Controller\UtilController;
 
 class ExampleController extends UtilController {
     ...
@@ -48,9 +48,9 @@ Now you can send an email, add a flash message and use doctrine from your contro
 public function exampleAction(Request $req) {
     // Send an email.
     $subject = "Sample mail";
-    $from = "contact@ofcoding.com";
+    $from = $this->parameter(UtilBundle::DEFAULT_MAIL);
     $to = "example@gmail.com";
-    $view = $this->renderView('OFCExampleBundle:Mail:info-mail.html.twig', 
+    $view = $this->renderView('KKExampleBundle:Mail:info-mail.html.twig', 
                     array('content' => '<h1>Sample Mail</h1><p>This is a sample</p>'));
     $this->mailing($subject, $from, $to, $view);
     // Add flash message
@@ -58,16 +58,16 @@ public function exampleAction(Request $req) {
     $msg = "There was an error...";
     $this->flashMsg($type, $msg);
     // Use doctrine repository
-    $this->doctrineRepo('OFCExampleBundle:Example')->loadExample();
+    $this->doctrineRepo('KKExampleBundle:Example')->loadExample();
 }
 ``` 
 
 - Util Entities: There are several util classes for strings, time, images and browser.
 ``` php
 // Import StrUtil
-use OfCoding\UtilBundle\Entity\StrUtil;
+use Kimerikal\UtilBundle\Entity\StrUtil;
 // Import ImgUtil
-use OfCoding\UtilBundle\Entity\ImgUtil;
+use Kimerikal\UtilBundle\Entity\ImgUtil;
 
 class ExampleController extends UtilController {
     ...
@@ -84,5 +84,5 @@ class ExampleController extends UtilController {
 }
 ```
 
-More info at <a href='http://www.ofcoding.com' target='_blank'>OfCoding</a>
+More info at <a href='http://www.kimerikal.com' target='_blank'>Kimerikal</a>
 
