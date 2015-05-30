@@ -37,5 +37,9 @@ class UtilController extends Controller {
     protected function userGranted($role) {
         return $this->get('security.context')->isGranted($role);
     }
+    
+    protected function getFullUrl(Request $request, $path = '') {
+        return  str_replace('/app_dev.php', '', $request->getUriForPath($path));
+    }
 
 }
