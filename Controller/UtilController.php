@@ -3,6 +3,7 @@
 namespace Kimerikal\UtilBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class UtilController extends Controller {
 
